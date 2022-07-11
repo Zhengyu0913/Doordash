@@ -8,11 +8,33 @@ import { Navigation, FreeMode } from "swiper";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { locationsTab } from "../Store/mock-data";
 import Category from "./Category";
-export default function Categories(props) {
-  const [isSelected, setIsSelected] = useState({});
+import { defaultState } from "../../pages/Stores";
 
+export default function Categories(props) {
+  const changeHandler = (cur_id, cur_isClicked, cur_label, cur_icon) => {
+    const newState = [];
+    for (let i = 0; i < defaultState.list.length; i++) {
+      if (defaultState.list[i].id === cur_id) {
+        newState.push({
+          id: cur_id,
+          label: cur_label,
+          icon: cur_icon,
+          isClicked: cur_isClicked,
+        });
+      } else {
+        newState.push(defaultState.list[i]);
+      }
+    }
+
+    props.changeState({ list: newState });
+
+    if (cur_isClicked) {
+      props.select(cur_id);
+    } else {
+      props.notSelect();
+    }
+  };
   return (
     <Box sx={{ position: "relative" }}>
       <Box mx={2}>
@@ -45,10 +67,10 @@ export default function Categories(props) {
             },
           }}
         >
-          {locationsTab.map((value) => {
+          {props.state.list.map((value) => {
             return (
               <SwiperSlide key={value.id}>
-                <Category value={value}></Category>
+                <Category value={value} change={changeHandler}></Category>
               </SwiperSlide>
             );
           })}

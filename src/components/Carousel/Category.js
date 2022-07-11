@@ -2,29 +2,27 @@ import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 export default function Category(props) {
-  const [isSelected, setIsSelected] = useState(false);
-  const clickHandler = (label) => {
-    console.log(label);
-    // setIsSelected(!isSelected);
-    // if (isSelected) {
-    //   props.Select();
-    // } else {
-    //   props.notSelect();
-    // }
+  const currentLabel = props.value.label;
+  const currentIcon = props.value.icon;
+  const currentIsClicked = props.value.isClicked;
+  const currentId = props.value.id;
+
+  const clickHandler = () => {
+    props.change(currentId, !currentIsClicked, currentLabel, currentIcon);
   };
   return (
-    <Box
-      sx={{ height: "80px", cursor: "pointer" }}
-      onClick={() => {
-        clickHandler(props.value.label);
-      }}
-    >
+    <Box sx={{ height: "80px", cursor: "pointer" }} onClick={clickHandler}>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        {props.value.icon}
+        {currentIcon}
       </Box>
       <Box mt={2} sx={{ display: "flex", justifyContent: "center" }}>
-        <Typography variant="p" fontSize={14} align="center">
-          {props.value.label}
+        <Typography
+          variant="p"
+          fontSize={14}
+          align="center"
+          color={currentIsClicked ? "primary" : ""}
+        >
+          {currentLabel}
         </Typography>
       </Box>
     </Box>

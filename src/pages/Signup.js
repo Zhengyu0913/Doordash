@@ -131,6 +131,39 @@ export default function SignUp() {
       password: passwordInput,
     });
 
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDXaLa6CbxBKo3owWVxbQQbtEeoxHl2DYw",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailInput,
+          password: passwordInput,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => {
+        if (res.ok) {
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = "Authentication failed!";
+            // if (data && data.error && data.error.message) {
+            //   errorMessage = data.error.message;
+            // }
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+
     setFirstNameInput("");
     setLastNameInput("");
     setEmailInput("");

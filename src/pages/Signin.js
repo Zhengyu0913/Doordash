@@ -86,6 +86,40 @@ export default function SignIn() {
 
       password: passwordInput,
     });
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDXaLa6CbxBKo3owWVxbQQbtEeoxHl2DYw",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailInput,
+          password: passwordInput,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = "Authentication failed!";
+            // if (data && data.error && data.error.message) {
+            //   errorMessage = data.error.message;
+            // }
+
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
 
     setEmailInput("");
     setPasswordInput("");

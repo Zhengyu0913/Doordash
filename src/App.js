@@ -15,8 +15,6 @@ import CartProvider from "./context/CartProvider";
 import NotFound from "./pages/NotFound";
 import Checkout from "./pages/Checkout";
 import Header from "./components/Layout/Header";
-
-import OptionsTab from "./components/Store/OptionsTab";
 import GetFreeDeliveries from "./pages/GetFreeDeliveries";
 
 const DUMMY_STORES = [
@@ -117,6 +115,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [0, 3],
   },
   {
     id: "s2",
@@ -158,6 +157,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [3],
   },
   {
     id: "s3",
@@ -199,6 +199,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [0, 3],
   },
   {
     id: "s4",
@@ -240,6 +241,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [0, 3],
   },
   {
     id: "s5",
@@ -281,293 +283,301 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [0, 3],
   },
   {
     id: "s6",
-    name: "Carl's Jr",
+    name: "85C Bakery Cafe",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "8m1",
+        name: "85C Bakery Cafe Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "8m2",
+        name: "85C Bakery Cafe Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "8m3",
+        name: "85C Bakery Cafe Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "8m4",
+        name: "85C Bakery Cafe Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [2],
   },
   {
     id: "s7",
-    name: "Carl's Jr",
+    name: "Cold Stone Creamery",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "csm1",
+        name: "Cold Stone Creamery Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "csm2",
+        name: "Cold Stone Creamery Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "csm3",
+        name: "Cold Stone Creamery Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "csm4",
+        name: "Cold Stone Creamery Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [2],
   },
   {
     id: "s8",
-    name: "Carl's Jr",
+    name: "The Cookie Plug",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "tcm1",
+        name: "The Cookie Plug Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "tcm2",
+        name: "The Cookie Plug Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "tcm3",
+        name: "The Cookie Plug Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "tcm4",
+        name: "The Cookie Plug Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [2],
   },
   {
     id: "s9",
-    name: "Carl's Jr",
+    name: "The Donut Man",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "tdm1",
+        name: "The Donut Man Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "tdm2",
+        name: "The Donut Man Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "tdm3",
+        name: "The Donut Man Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "tdm4",
+        name: "The Donut Man Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [2],
   },
   {
     id: "s10",
-    name: "Carl's Jr",
+    name: "Taquerua De Anda",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "asm1",
+        name: "Taquerua De Anda Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "asm2",
+        name: "Taquerua De Anda Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "asm3",
+        name: "Taquerua De Anda Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "asm4",
+        name: "Taquerua De Anda Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [1],
   },
   {
     id: "s11",
-    name: "Carl's Jr",
+    name: "Pro Tacos",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "ptm1",
+        name: "Pro Tacos Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "ptm2",
+        name: "Pro Tacos Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "ptm3",
+        name: "Pro Tacos Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "ptm4",
+        name: "Pro Tacos Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [1],
   },
   {
     id: "s12",
-    name: "Carl's Jr",
+    name: "Alberto's Mexican Food",
     img: "https://img.cdn4dd.com/p/fit=cover,width=400,format=jpeg,quality=50/media/photos/c2d572b2-7f6f-4f17-a4a2-250210bd03e0-retina-large.jpg",
     headerImg:
       "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/36fffbd7-155f-4692-98af-9002301034d2.jpg",
     menu: [
       {
-        id: "cm1",
-        name: "Carl's Sushi",
+        id: "am1",
+        name: "Alberto's Sushi",
         description: "Finest fish and veggies",
         price: 22.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm2",
-        name: "Carl's Schnitzel",
+        id: "am2",
+        name: "Alberto's Schnitzel",
         description: "A german specialty!",
         price: 16.5,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm3",
-        name: "Carl's Barbecue Burger",
+        id: "am3",
+        name: "Alberto's Barbecue Burger",
         description: "American, raw, meaty",
         price: 12.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
       {
-        id: "cm4",
-        name: "Carl's Green Bowl",
+        id: "am4",
+        name: "Alberto's Green Bowl",
         description: "Healthy...and green...",
         price: 18.99,
         menuImg:
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [1],
   },
   {
     id: "s13",
@@ -609,6 +619,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [3, 5],
   },
   {
     id: "s14",
@@ -650,6 +661,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [3, 5],
   },
   {
     id: "s15",
@@ -691,6 +703,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [3, 5],
   },
   {
     id: "s16",
@@ -732,6 +745,7 @@ const DUMMY_STORES = [
           "https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photos/50375cef-402b-4894-a23d-5d3e706bb51c-retina-large-jpeg",
       },
     ],
+    category: [3, 5],
   },
 ];
 function App() {
